@@ -1,7 +1,7 @@
 var express    = require('express');
 var PORT       = require('../SETTINGS').httpServer.port;
 var app        = express();
-var bodyParser = require('connect').bodyParser();
+var bodyParser = require('body-parser');
 
 app.configure = function() {
   app.use(bodyParser);
