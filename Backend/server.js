@@ -4,7 +4,10 @@ var app        = express();
 var bodyParser = require('body-parser');
 
 app.configure = function() {
-  app.use(bodyParser);
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({
+    extended: false
+  }));
   app.use(express.static(__dirname + '../frontEnd'));
 };
 
