@@ -4,5 +4,10 @@ module.exports = function(app) {
     res.send('ok maggle');
   });
 
-};
+  app.get('/:id', function(req, res) {
+    var id = req.body.id;
 
+    
+  });
+
+};

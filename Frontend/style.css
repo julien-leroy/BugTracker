@@ -1,0 +1,19 @@
+body{
+	height: 1000px;
+	background: linear-gradient(to bottom right, #0D2F3B, #226880);
+}
+
+#header{
+	margin-bottom: 50px;
+}
+
+#title{
+	color: #67c1f5;
+	padding: 50px;
+	text-align: center;
+}
+
+#userGames{
+	color: #67c1f5;
+	text-align: center;
+}
