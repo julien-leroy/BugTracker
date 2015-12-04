@@ -14,9 +14,7 @@ module.exports = function(app) {
   	
   	mysql.query("SELECT email, password FROM bugtracker.user WHERE email like '" + email + "' AND password like '" +  password + "'" , function(err, rows){
 	    if(err){ throw new Error(err); }
-		sess=req.session;
-	  	sess.email=req.body.email;
-	  	var user=req.session.email;
+	  	res.redirect('/admin');
 	});
 
 

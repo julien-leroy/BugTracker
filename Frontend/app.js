@@ -1,11 +1,11 @@
 $(document).ready(function(){
 	$("#getUser").click(function(){
-		var user = $( "#userName" ).val();
+		var email = $( "#username-email" ).val();
 	     
 	    $.ajax({
 	       url : '/getUsers',
 	       type : 'GET',
-		   data : 'email=' + user,
+		   data : 'email=' + email,
 	       dataType : 'html',
 	       success : function(json, statut){
 	           $("#userGames").text(json);
