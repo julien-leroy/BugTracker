@@ -28,20 +28,36 @@ UserModel.prototype.fromJSON = function(json) {
 
 UserModel.test = function(){
 
-  messages = mysql.query('SELECT * FROM user', function(err, rows){
+  messages = mysql.query('SELECT * FROM bugtracker.user', function(err, rows){
     if(err){ throw new err; }
+    console.log("messages : ", rows[0] );
   });
-  console.log("messages : ", messages );
   return JSON.parse(messages.toString());
 };
 
-UserModel.prototype.createUser = function(name, role){
+UserModel.createUser = function(name, email, role){
 
-  messages = mysql.query('INSERT INTO bug-tracker.user (name, role) VALUES (' + name + ', ' + role + ');', function(err, rows){
+  messages = mysql.query('INSERT INTO bugtracker.user (name, role) VALUES (' + name + ', ' + role + ');', function(err, rows){
     if(err){ throw new err; }
   });
-  console.log("messages : ", messages );
   return JSON.parse(messages.toString());
 }
+
+UserModel.changeEmail = function(nom, prenom, email, password, role_id){
+
+  messages = mysql.query('INSERT INTO bugtracker.user (lastname, firstname, email, password, role_id) VALUES (' + name + ', ' + role + ');', function(err, rows){
+    if(err){ throw new err; }
+  });
+  return JSON.parse(messages.toString());
+}
+
+UserModel.showUsers = function(nom, prenom, email, password, role_id){
+
+  messages = mysql.query('INSERT INTO bugtracker.user (lastname, firstname, email, password, role_id) VALUES (' + name + ', ' + role + ');', function(err, rows){
+    if(err){ throw new err; }
+  });
+  return JSON.parse(messages.toString());
+}
+
 
 module.exports = UserModel;
