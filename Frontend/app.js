@@ -1,17 +1,13 @@
-var steamAPIUrl = "http://api.steampowered.com/"
-var steamAPIKey = 'FB4467B73B9012463F2594FEBABCAF47';
-var format = 'json';
-
 $(document).ready(function(){
 	$("#getUser").click(function(){
-		var userName = $( "#userName" ).val();
+		var user = $( "#userName" ).val();
 	     
 	    $.ajax({
-	       url : steamAPIUrl + 'IPlayerService/GetOwnedGames/v0001/',
+	       url : '/getUsers',
 	       type : 'GET',
-	       data : 'key=' + steamAPIKey + '&steamid=' + userName + '&format=' + format,
+		   data : 'email=' + user,
 	       dataType : 'html',
-	       success : function(code_html, statut){
+	       success : function(json, statut){
 	           $("#userGames").text(json);
 	       },
 

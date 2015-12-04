@@ -1,4 +1,5 @@
 var express    = require('express');
+var session    = require('express-session');
 var PORT       = require('../SETTINGS').httpServer.port;
 var app        = express();
 var bodyParser = require('body-parser');
@@ -6,6 +7,7 @@ var bodyParser = require('body-parser');
 app.configure = function() {
   app.use(express.static('../frontEnd'));
   app.use(bodyParser.json());
+  app.use(session({secret: 'ssshhhhh'}));
   app.use(bodyParser.urlencoded({
     extended: false
   }));
